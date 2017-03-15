@@ -1,0 +1,77 @@
+--
+-- For more information on build.settings see the Corona SDK Build Guide at:
+-- https://docs.coronalabs.com/guide/distribution/buildSettings
+--
+
+settings =
+{
+	orientation =
+	{
+		-- Supported values for orientation:
+		-- portrait, portraitUpsideDown, landscapeLeft, landscapeRight
+
+		default = "landscapeLeft",
+		supported = { "landscapeLeft", "landscapeRight" },
+	},
+
+	win32 = 
+	{
+		preferenceStorage = "registry",
+	}
+	window =
+	{
+		defaultMode = "normal",
+		defaultViewWidth = 1280,
+		defaultViewHeight = 720,
+		resizable = false,
+		enableCloseButton = ture,
+		enableMinimizeButton = ture,
+		enableMaximizeButton = ture,
+		suspendWhenMinimized = true,
+		 titleText = {
+            -- The "default" text will be used if the system is using a language and/or
+            -- country code not defined below. This serves as a fallback mechanism.
+            default = "Window Title Test",
+            -- This text is used on English language systems in the United States.
+            -- Note that the country code must be separated by a dash (-).
+            ["en‐us"] = "Window Title Test (English‐USA)",
+            -- This text is used on English language systems in the United Kingdom.
+            -- Note that the country code must be separated by a dash (-).
+            ["en‐gb"] = "Window Title Test (English‐UK)",
+            -- This text is used for all other English language systems.
+            ["en"] = "Window Title Test (English)",
+            -- This text is used for all French language systems.
+            ["fr"] = "Window Title Test (French)",
+            -- This text is used for all Spanish language systems.
+            ["es"] = "Window Title Test (Spanish)",
+        },
+
+
+	}
+	excludeFiles =
+	{
+		-- Include only the necessary icon files on each platform
+		android = { "Icon.png", "Icon-Small-*.png", "Icon*@2x.png", },
+	},
+
+	--
+	-- iOS Section
+	--
+	--
+	-- Android Section
+	--
+	android =
+	{
+		coronaWindowMovesWhenKeyboardAppears = true,
+        installLocation = "auto",
+        largeHeap = true,
+        usesExpansionFile = false,
+        supportsTV = false, -- 안드로이드TV를 지원하려면 true
+        isGame = true, -- 게임이 아니라면 false		
+		usesPermissions =
+		{
+			"android.permission.INTERNET",
+			"android.permission.ACCESS_NETWORK_STATE",
+		},
+	},
+}

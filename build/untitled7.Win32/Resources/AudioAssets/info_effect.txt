@@ -1,0 +1,19 @@
+접두어 : effect_
+확장자 : .wav
+
+boxOpen : 상자 열리는 소리
+gameOver : 게임 오버 징글
+jump : 점프하는 소리
+monDamage : 몬스터 피격음
+playerDamage : 플레이어 피격음
+ui : UI 조작 사운드
+crackRock : 바위 깨지는 소리
+footstep : 플레이어 걷는 소리
+hmrHit : 망치로 치는 소리
+mapMove : 맵 이동시 포탈 사운드
+monDie : 몬스터 사망 효과음
+noise : TV 노이즈
+playerDie : 플레이어 사망 효과음
+reboot : 다시 켜질 때 효과음
+respawn : 리스폰 효과음
+shutdown : 리부트 트리거 걸렸을 때 효과음

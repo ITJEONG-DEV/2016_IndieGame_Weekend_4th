@@ -1,0 +1,141 @@
+1280 720
+
+>>
+
+local cookieData =
+{
+   width = 100, 
+   height = 100,
+   numFrames = 7,
+   sheetContentWidth = 700,
+   sheetContentHeight = 100
+}
+local sheetData =
+{
+   {name = "run", frames = {1, 2, 3, 4, 5, 6}, time = 500, loopCount = 0}, 
+   {name = "jump", frames = { 7 }, time = 500, loopCount = 0 }
+}
+
+local sheet = graphics.newImageSheet("cookie.png", cookieData )
+
+local cookieAnimation = display.newSprite( sheet, sheetData)
+cookieAnimation.x = _W / 2 - 75
+cookieAnimation.y = _H /3 * 2 - 40
+cookieAnimation:play()
+
+local b = function ( e )
+   cookieAnimation:setSequence( "run" )
+   --cookieAnimation:play()
+end
+
+local c = function ( e )
+   transition.to( cookieAnimation, { time = 300, y = cookieAnimation.y + 50, transition = easing.inQuad, onComplete = b })
+end
+
+local a = function ( e )
+   cookieAnimation:setSequence("jump")
+   --cookieAnimation:play()
+   transition.to( cookieAnimation, { time = 300, y = cookieAnimation.y - 50, transition = easing.outQuad, onComplete = c } )
+end
+
+Runtime:addEventListener( "touch", a )
+
+================================================
+
+-- Called when a key event has been received
+local function onKeyEvent( event )
+    if ( event.isCtrlDown ) then
+        -- The Alt key was held down for the given key
+        display.newText("Ctrl Button is on!", _W*0.5, _H*0.5)
+    else
+        -- The Alt key was not held down for the given key
+    end
+    return false
+end
+
+-- Add the key event listener
+Runtime:addEventListener( "key", onKeyEvent )
+
+================================================
+keyName	Description
+up	The up arrow key on the keyboard or D-pad.
+down	The down arrow key on the keyb oard or D-pad.
+left	The left arrow key on the keyboard or D-pad.
+right	The right arrow key on the keyboard or D-pad.
+
+================================================
+
+	if e.keyName == "left" then
+		if char.x < 50 then char.x = char.contentWidth*0.5
+		else char.x = char.x - 1
+		end
+	elseif e.keyName == "right" then
+		if char.x == _W * 0.5 then end
+		if char.x > _W then
+		char.x = char.x + 1
+		end
+	elseif e.keyName == "up" then char.y = char.y - 50
+	else
+	end
+
+	return false 
+
+===============================================
+
+onKeyEvent = function ( e )
+	-- if ended // else moved
+	if e.phase == "down" then
+		keyName = e.keyName
+		if keyName == "left" then -- move left
+			if ( char.x >= _W * 0.5 - 50 ) and ( char.x <= _W * 0.5 + 50 ) then
+				if backImage.x < 0 then
+					backImage.x = backImage.x + v
+				else
+					if char.x - char.contentWidth*0.5 - v < 0 then
+						char.x = char.contentWidth*0.5
+					else
+						char.x = char.x - v
+					end
+				end
+			else
+				if char.x - char.contentWidth*0.5 - v <= 0 then
+					char.x = char.contentWidth*0.5
+				else
+					char.x = char.x - v
+				end
+			end
+		elseif keyName == "right" then -- move right
+			if ( char.x >= _W * 0.5 - 50 ) and ( char.x <= _W * 0.5 + 50 ) then
+				if backImage.x + backImage.contentWidth > _W then
+					backImage.x = backImage.x - v
+				else
+					if char.x + char.contentWidth*0.5 + v > _W then
+						char.x = _W - char.contentWidth*0.5
+					else
+						char.x = char.x + v
+					end
+				end
+			else
+				if char.x + char.contentWidth*0.5 + v >= _W then
+					char.x = _W - char.contentWidth*0.5
+				else
+					char.x = char.x + v
+				end
+			end
+		elseif keyName == "up" then -- jump
+		elseif keyName == "space" then -- use hammer
+		else
+		end
+	else
+	end
+
+	return false
+end
+
+===============================================
+
+local function playBGM(e)
+   media.playSound("/BGM/bgm_main2.mp3", playBGM)
+end
+
+media.playSound("/BGM/bgm_main2.mp3", playBGM)

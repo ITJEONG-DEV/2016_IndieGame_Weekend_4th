@@ -1,0 +1,9 @@
+접두어 : effect_
+확장자 : .wav
+
+boxOpen : 상자 열리는 소리
+gameOver : 게임 오버 징글
+jump : 점프하는 소리
+monDamage : 몬스터 피격음
+playerDamage : 플레이어 피격음
+ui : UI 조작 사운드
