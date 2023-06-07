@@ -22,7 +22,7 @@
 
 | CoronaSDK | lua |
 | :--------: | :--------: |
-|   ![coronasdk]    |   ![lua]    |
+|   <img src="/.images/coronasdk.png" width="200" height="180"/>   |   <img src="/.images/lua.png" width="200" height="200"/>    |
 
 <br>
 
@@ -102,8 +102,3 @@
 ## 라이센스
 
 MIT &copy; [NoHack](mailto:lbjp114@gmail.com)
-
-<!-- Stack Icon Refernces -->
-
-[coronasdk]: /.images/coronasdk.png
-[lua]: /.images/lua.png
